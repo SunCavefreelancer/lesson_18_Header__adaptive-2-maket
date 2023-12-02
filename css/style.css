@@ -40,7 +40,10 @@ body {
 
 
 /* ---header---- */
-/* .header {} */
+.header {
+	position: relative;
+	z-index: 50;
+}
 
 .header__container {
 	display: flex;
@@ -185,7 +188,7 @@ body {
 	/* ширина фона sub-menu */
 	border-radius: 15px;
 	padding: 15px;
-	background-color: #224149;
+	background-color: rgba(34, 73, 64, 0.323); /* фон під саб меню */
 	color: #FFF;
 	/* color фона sub-menu */
 }
@@ -241,6 +244,12 @@ body {
 	border: 1px solid transparent;
 	transition: transform 0.3s;
 }
+@media (max-width:960px){
+	.button__header__item {
+		padding: 9px 29px 11px 26px;
+	}
+}
+
 
 
 @media (any-hover: hover) {
@@ -282,7 +291,7 @@ body {
 		transition: top 0.3s;
 		/* буде виїзджати ЗВЕРХУ */
 		z-index: 3px;
-		background-color: #0e333d33;
+		background-color: rgb(89, 54, 107);
 		padding: 80px 15px 30px 15px;
 
 
@@ -301,8 +310,8 @@ body {
 		/* буде виїзджати ЗВЕРХУ */
 		transition: top 0.3s;
 		/* буде виїзджати ЗВЕРХУ */
-		z-index: 200px;
-		background-color: #0e333d33;;
+		z-index: 3px;
+		background-color: #a583fc;
 	}
 
 	.menu-open .menu__body,
@@ -444,7 +453,7 @@ body {
 
 	.button__header__item {
 		gap: 5px;
-		padding: 12px 24px 14px 21px;
+		padding: 5px 24px 7px 21px;
 		font-size: 16px;
 	}
 }
@@ -463,6 +472,16 @@ body {
 .hero {
 	padding: 100px 0px 140px 0px;
 }
+@media (max-width:1100px){
+	.hero {
+		padding: 50px 0px 50px 0px;
+	}
+}
+@media (max-width:450px){
+	.hero {
+		padding: 40px 0px 50px 0px;
+	}
+}
 
 .hero__body:last-child {
 	margin-bottom: 0;
@@ -480,7 +499,6 @@ body {
 .hero__text {
 	flex: 0 1 56%; /* ----------------------586рх по макету-цей--блок--------------- */
 	padding: 0px 43px;
-	border: 1px solid red;
 }
 
 @media (max-width:1100px){
@@ -547,6 +565,7 @@ body {
 	.hero__buttons {
 		flex-direction: column;
 		gap: 20px;	
+		text-align: center;		/* поставили нижню кнопку ПО ЦЕНТРУ */
 	}
 }
 
@@ -612,7 +631,6 @@ body {
 @media (max-width:965px){
 	.hero__foto {
 		display: flex;
-		flex-wrap: wrap;
 		flex: 0 1 100%; /* ----------------------523рх по макету-цей--блок--------------- */
 		padding: 0px 43px;
 	}
@@ -622,6 +640,17 @@ body {
 		margin-top: -80px;
 	}
 }
+@media (max-width:450px){
+	.hero__foto {
+		flex-wrap: wrap;
+		flex-direction: column;
+		gap: 20px;		
+	}
+	.hero__img:not(:last-child) {
+		margin-right: 0px;
+	}
+
+}
 
 .hero__img--two img{
 	margin-top: -69px;	/* підняли фото у верх */
@@ -629,9 +658,6 @@ body {
 @media (max-width:520px){
 	.hero__img--two img{
 		margin-top: 0px;	/* спустили фото у на місце */
-	}
-	.hero__img:not(:last-child) {
-		margin-right: 20px;
 	}
 }
 
