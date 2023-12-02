@@ -29,8 +29,8 @@ body {
 
 /* для усіх "__container" однаково */
 [class*="__container"] {
-	max-width: 1200px;
-	/* 1170 + 15 + 15 */
+	max-width: 1216px;
+	/* 1186 + 15 + 15 */
 	margin: 0 auto;
 	padding-left: 15px;
 	padding-right: 15px;
@@ -59,9 +59,8 @@ body {
 	font-style: italic;
 	font-weight: 700;
 	line-height: 1.26;
-	flex-shrink: 0;
-	/* щоб логотип не переносився на другий рядок при зменшенні екрану */
-
+	flex-shrink: 0;		/* щоб логотип не переносився на другий рядок при зменшенні екрану */
+	
 	position: relative;
 	/* дістаємо наверх для адаптиву */
 	z-index: 5;
@@ -205,7 +204,7 @@ body {
 
 @media (any-hover: hover) {
 
-	/* прибираємо -hover- на тачюскрінах */
+	/* прибираємо -hover- на тач-скрінах */
 	.sub-menu__link:hover {
 		text-decoration: underline;
 	}
@@ -282,9 +281,12 @@ body {
 		/* буде виїзджати ЗВЕРХУ */
 		transition: top 0.3s;
 		/* буде виїзджати ЗВЕРХУ */
-
+		z-index: 3px;
 		background-color: #0e333d33;
 		padding: 80px 15px 30px 15px;
+
+
+
 	}
 
 	.menu__body::before {
@@ -299,7 +301,7 @@ body {
 		/* буде виїзджати ЗВЕРХУ */
 		transition: top 0.3s;
 		/* буде виїзджати ЗВЕРХУ */
-		z-index: 3;
+		z-index: 200px;
 		background-color: #0e333d33;;
 	}
 
@@ -375,7 +377,7 @@ body {
 		z-index: 5;
 	}
 
-	/* малюємо бургер полоски*/
+	/* ------------------------малюємо бургер полоски--------------------*/
 	.icon-menu::before,/* верхня полоска */
 	.icon-menu::after {/* нижня полоска */
 		content: "";
@@ -452,7 +454,9 @@ body {
 
 
 /* -------main--------- */
-/* .main {} */
+
+.main {
+}
 
 /* .hero__container {} */
 
@@ -474,9 +478,21 @@ body {
 }
 
 .hero__text {
-	flex: 0 1 50%;
+	flex: 0 1 56%; /* ----------------------586рх по макету-цей--блок--------------- */
 	padding: 0px 43px;
+	border: 1px solid red;
 }
+
+@media (max-width:1100px){
+	.hero__text {
+		flex: 0 1 100%; /* ----------------------586рх по макету-цей--блок--------------- */
+		padding: 0px 43px;
+		margin-bottom: 100px;
+	}
+}
+
+
+
 .hero__text h1{
 	color: #0E333D;
 	font-family: 'DM Serif Text';
@@ -484,6 +500,27 @@ body {
 	line-height: 127%; /* 99.06px */
 	margin-bottom: 32px;
 }
+
+@media (max-width:965px){
+	.hero__text h1{
+		font-size: 65px;
+		margin-bottom: 15px;
+	}
+}
+@media (max-width:767px){
+	.hero__text h1{
+		font-size: 50px;
+		margin-bottom: 15px;
+	}
+}
+@media (max-width:380px){
+	.hero__text h1{
+		font-size: 40px;
+		margin-bottom: 15px;
+	}
+}
+
+
 .hero__title {
 	color: #727272;
 	font-family: 'Inter';
@@ -492,13 +529,27 @@ body {
 	margin-bottom: 48px;
 }
 
+@media (max-width:965px){
+	.hero__title {
+		font-size: 20px;
+		margin-bottom: 30px;
+	}
+}
+
+
 
 /* buttons */
 .hero__buttons {
 	display: flex;
 	gap: 47px;	
-
 }
+@media (max-width:520px){
+	.hero__buttons {
+		flex-direction: column;
+		gap: 20px;	
+	}
+}
+
 .hero__button {
 	text-decoration-line: underline;
 	padding: 10px 44px;
@@ -511,6 +562,12 @@ body {
 }
 .hero__button:hover {
 	text-decoration-line: none;
+}
+
+@media (max-width:520px){
+	.hero__button {
+		font-size: 24px;
+	}
 }
 
 .hero__buttons--green {	
@@ -533,21 +590,55 @@ body {
 /* foto */
 .hero__foto {
 	display: flex;
-	flex: 0 1 50%;
+	flex: 0 1 44%; /* ----------------------523рх по макету-цей--блок--------------- */
 	padding: 0px 43px;
+
 }
 
 .hero__img:not(:last-child) {
 	margin-right: 32px;
 }
+
+@media (max-width:1200px){
+	.hero__img:not(:last-child) {
+		margin-right: 25px;
+	}
+}
+@media (max-width:1100px){
+	.hero__foto {
+		flex: 0 1 75%; /* ----------------------523рх по макету-цей--блок--------------- */
+	}
+}
+@media (max-width:965px){
+	.hero__foto {
+		display: flex;
+		flex-wrap: wrap;
+		flex: 0 1 100%; /* ----------------------523рх по макету-цей--блок--------------- */
+		padding: 0px 43px;
+	}
+}
+@media (max-width:520px){
+	.hero__foto {
+		margin-top: -80px;
+	}
+}
+
 .hero__img--two img{
 	margin-top: -69px;	/* підняли фото у верх */
+}
+@media (max-width:520px){
+	.hero__img--two img{
+		margin-top: 0px;	/* спустили фото у на місце */
+	}
+	.hero__img:not(:last-child) {
+		margin-right: 20px;
+	}
 }
 
 .hero__img { /* ---------------------для ОБГОРТКИ---------------- */
 	position: relative;
-	padding-bottom: 52.564103%; /* 246px/468 *//* висота для фото */
-	flex-basis: 246px; 							/* ширина для фото */
+	padding-bottom: 52.564103%; /* 245px поділити на висоту 468рх *//* висота для фото */
+	flex-basis:  46.84%; 	/* ширина для фото (245px) поділити на розмір їх батьківського блоку (523рх) *100 =  46.84....% тому і пишемо flex-basis:  46,84%; */
 }
 .hero__img img { /* ----------------для ЗОБРАЖЕННЯ---------------- */
 	position: absolute;
